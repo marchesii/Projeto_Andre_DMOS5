@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pagina_logando -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pagina_loga"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/relative_Layout"
+        app:layout_constraintEnd_toEndOf="@+id/relative_Layout"
+        app:layout_constraintBottom_toTopOf="@+id/relative_Layout"
+        android:text="TheTrueSup"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-smallcaps"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_marginBottom="10sp"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/morgana_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/Morgana_icon_foreground"/>
+
+        <TextView
+            android:id="@+id/nome_invocador_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Procure por invocador"
+            android:textSize="30sp"
+            android:layout_below="@+id/morgana_icon"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/editText_invocador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Insira o nome do invocador"
+            android:layout_below="@+id/nome_invocador_text"
+            android:layout_alignStart="@+id/nome_invocador_text"
+            android:layout_alignEnd="@id/nome_invocador_text"
+            android:layout_marginTop="20dp"
+            />
+
+        <Button
+            android:id="@+id/button_procurar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/check_lembrar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Procurar"
+            android:background="@drawable/botao_customizado"
+            />
+
+        <CheckBox
+            android:layout_below="@+id/editText_invocador"
+            android:layout_alignStart="@+id/editText_invocador"
+            android:id="@+id/check_lembrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/check_lembrar"
+            android:textAlignment="center"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/editText_invocador"
+            android:hint="Lembrar-me"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

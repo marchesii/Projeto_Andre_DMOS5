@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pagina_Detalhes_Partida -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pagina_loga"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/relative_Layout"
+        app:layout_constraintEnd_toEndOf="@+id/relative_Layout"
+        app:layout_constraintBottom_toTopOf="@+id/relative_Layout"
+        android:text="Detalhes da partida"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_marginBottom="10sp"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorWhite">
+        
+        <TextView
+            android:id="@+id/resultad_partida_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="Resultado"
+            android:layout_centerHorizontal="true"/>
+
+        <RelativeLayout
+            android:id="@+id/relative_participantes_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resultad_partida_textview">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_partidas_detalhe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        
+        <TextView
+            android:id="@+id/textview_vantagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vantagem"
+            android:textStyle="bold"
+            android:layout_below="@id/relative_participantes_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_vantagem"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imagemView_GroupAzul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_group_24"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_group_24_red"
+                android:layout_below="@id/imagemView_GroupAzul"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imagemView_GroupAzul"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:id="@+id/chart_vantagem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

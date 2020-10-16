@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pagina_Perfil -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pagina_loga"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    //Info Container
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relative_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/colorWhite">
+
+        //Fraco Status
+        <LinearLayout
+            android:id="@+id/linear_campeao_fraco_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fraco Contra:"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_fracoContra"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:itemCount="5"/>
+        </LinearLayout>
+
+        //Forte Status
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/linear_campeao_fraco_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forte Contra:"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_forteContra"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                tools:itemCount="5"/>
+
+        </LinearLayout>
+
+        //PickareImage
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/linear_campeao_fraco_layout"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/imagemView_pickrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fundo_customizado"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/imagemView_pickrate"
+                android:layout_alignTop="@+id/imagemView_pickrate"
+                android:layout_alignRight="@+id/imagemView_pickrate"
+                android:layout_alignBottom="@+id/imagemView_pickrate"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="100%"
+                android:textSize="30sp"
+                />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    //Layout Pro LeagueIcon
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/champ_icon"
+            android:layout_width="146dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="140dp"
+            android:src="@mipmap/Bronze_Icon_foreground"/>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -1,0 +1,38 @@
+    "id": "i1Y1wBmJJiZlupsvLgaC8N-ZJdbMMLy_xAD7pXobcJ1IVw",
+    "accountId": "pBywa74ANidp58ucENU5CWh48HzX6aqQHprqSMpUS_t8",
+    "puuid": "i87IdDUchSautS00-MN7hsD8CiR0DtwWPtUAvWHx92EKzkoORVwFsu3NjBqU6z4k7fr5kSWInb7dBw",
+    "name": "MrMigo",
+    "profileIconId": 4022,
+    "revisionDate": 1602433552000,
+    "summonerLevel": 157
+
+1602658800
+
+Code - 200 = Deu certo
+
+Meu API KEY - ?api_key=RGAPI-9b968d38-5858-447f-82d5-e951f8dc1130
+Ajuda nas API - https://developer.riotgames.com/docs/lol#data-dragon_champions
+
+Campeões -> http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion.json
+Icone Campeão -> http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/x.png
+Seasons -> http://static.developer.riotgames.com/docs/lol/seasons.json
+Queue -> http://static.developer.riotgames.com/docs/lol/queues.json
+GameModes -> http://static.developer.riotgames.com/docs/lol/gameModes.json
+
+Pega status do servidor - https://br1.api.riotgames.com/lol/status/v3/shard-data
+/\ Primeira coisa a ser feita para ver se o server tá on
+Pega informações da conta - https://developer.riotgames.com/apis#summoner-v4/GET_getBySummonerName
+/\ Primeira coisa a ser feita
+Pega Mastery dos champs -> https://br1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}
+Pega uma partida específica - https://br1.api.riotgames.com/lol/match/v4/matches/
+Pegar ultimas 100 partidas - https://br1.api.riotgames.com/lol/match/v4/matchlists/by-account
+Pegar Ultimas partidas depois das ultimas 100 - https://br1.api.riotgames.com/lol/match/v4/matchlists/by-account/pBywa74ANidp58ucENU5CWh48HzX6aqQHprqSMpUS_t8?beginIndex=100
+Pega rank - https://developer.riotgames.com/apis#league-v4
+
+{
+    (MID_LANE, SOLO): MIDDLE,
+    (TOP_LANE, SOLO): TOP,
+    (JUNGLE, NONE): JUNGLE,
+    (BOT_LANE, DUO_CARRY): BOTTOM,
+    (BOT_LANE, DUO_SUPPORT): UTILITY
+}

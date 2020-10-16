@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pagina_Perfil -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pagina_loga"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relative_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/textview_elo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="90dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Bronze III"
+            android:textColor="@color/colorEloBronze"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/image_summoner_icon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:layout_constraintLeft_toRightOf="@+id/textview_elo"
+            app:layout_constraintTop_toBottomOf="@id/textview_elo"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src=""
+            android:background="@drawable/border"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/image_summoner_icon"
+            app:layout_constraintLeft_toLeftOf="@id/image_summoner_icon"
+            android:text="MrMigo"
+            android:textSize="25sp"/>
+
+        <Button
+            android:id="@+id/button_History"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraint_Layout_Stats"
+            app:layout_constraintLeft_toLeftOf="@id/constraint_Layout_Stats"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:foreground="@drawable/ic_baseline_history_24"
+            android:background="@drawable/botao_historico"/>
+
+        <Button
+            android:id="@+id/button_Pool"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_History"
+            app:layout_constraintLeft_toLeftOf="@id/constraint_Layout_Stats"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:foreground="@drawable/ic_baseline_bar_chart_24"
+            android:background="@drawable/botao_historico"/>
+
+
+        <Button
+            android:id="@+id/button_att"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintLeft_toRightOf="@id/constraint_Layout_Stats"
+            app:layout_constraintBottom_toBottomOf="@id/constraint_Layout_Stats"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/botao_historico"
+            android:foreground="@drawable/ic_baseline_renew_24"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_Layout_Stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/colorBackgroundSuave">
+
+        <TextView
+            android:id="@+id/textView_lvl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="Level"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/textView_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="150"
+            android:textSize="30sp"
+            android:layout_toEndOf="@+id/textView_lvl"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginRight="10dp"
+            app:layout_constraintLeft_toRightOf="@id/textView_lvl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/textview_win"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="WIN'S"
+            android:textColor="@color/colorGreen"
+            android:layout_marginLeft="10dp"
+            android:layout_above="@+id/textView_win_count"
+            app:layout_constraintBottom_toTopOf="@id/textView_win_count"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView_win_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:textSize="30sp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginRight="10dp"
+            android:layout_above="@+id/textView_lvl"
+            app:layout_constraintBottom_toTopOf="@id/textView_lvl"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="LOSSES"
+                android:textColor="@color/colorRed"
+                android:layout_marginLeft="10dp"
+                android:layout_above="@+id/textView_win_count"
+                app:layout_constraintBottom_toTopOf="@id/textView_win_count"
+                app:layout_constraintLeft_toRightOf="@id/textview_win"/>
+
+            <TextView
+                android:id="@+id/textView_lose_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="20"
+                android:textSize="30sp"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/colorBlack"
+                android:layout_above="@+id/textView_lvl"
+                app:layout_constraintBottom_toTopOf="@id/textView_lvl"
+                app:layout_constraintLeft_toRightOf="@id/textView_win_count"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/elo_icon"
+            android:layout_width="146dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="140dp"
+            android:src="@mipmap/Bronze_Icon_foreground"/>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorBackground">#934EA3</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorButtonBackground">#4541F1</color>
+    <color name="colorEloIron">#291B16</color>
+    <color name="colorEloBronze">#946041</color>
+    <color name="colorEloSilver">#4B5C62</color>
+    <color name="colorEloGold">#B77F33</color>
+    <color name="colorEloPlatinium">#27EF7C</color>
+    <color name="colorEloDiamond">#332E6D</color>
+    <color name="colorEloMaster">#DA26E7</color>
+    <color name="colorEloGrandMaster">#EC292C</color>
+    <color name="colorBackgroundSuave">#D4B8E2</color>
+    <color name="colorGreen">#25C119</color>
+    <color name="colorRed">#CF1111</color>
+    <color name="colorGray">#75818181</color>
+
+
+</resources>
