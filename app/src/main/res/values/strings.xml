@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">ProjetoLol</string>
     <string name="no_data">Sem dados disponíveis</string>
+    <string name="explicacao_permissao">Permitir uso da internet</string>
+    <string name="botao_fornecer">Fornecer</string>
+    <string name="botao_nao_fornecer">Não Fornecer</string>
+    <string name="user_invalido">Invocador Inválido</string>
+    <string name="erro_user">Não encontrado</string>
+    <string name="erro_api">Erro no request da API</string>
+    <string name="liga_invalido">Liga invalida</string>
 </resources>
