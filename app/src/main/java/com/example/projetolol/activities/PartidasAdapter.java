@@ -16,6 +16,9 @@ public class PartidasAdapter extends RecyclerView.Adapter<PartidasAdapter.ViewHo
 
     private List<Partida> mPartidaList;
 
+    public PartidasAdapter(List<Partida> mPartidasList) {
+    }
+
     @NonNull
     @Override
     public PartidasAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

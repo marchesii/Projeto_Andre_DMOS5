@@ -17,23 +17,25 @@ public class PartidaDAO {
 
     public PartidaDAO(Context context) { mHelper = new SQLiteHelper(context); }
 
-    public void add(Partida partida) throws NullPointerException {
-        if (partida == null) {
+    public void add(List<Partida> partidas) throws NullPointerException {
+        if (partidas == null) {
             throw new NullPointerException("Partida inválida");
         }
 
-        ContentValues valores = new ContentValues();
-        valores.put(SQLiteHelper.COLUMN_PARTIDA_CAMPEAO, partida.getChampion());
-        valores.put(SQLiteHelper.COLUMN_ROLE, partida.getRole());
-        valores.put(SQLiteHelper.COLUMN_LANE, partida.getLane());
-        valores.put(SQLiteHelper.COLUMN_REALLANE, partida.getRealLane());
-        valores.put(SQLiteHelper.COLUMN_GAME_DURATION, partida.getGameDuration());
-        valores.put(SQLiteHelper.COLUMN_PARTICIPANTES, partida.getParticipants().toString());
-        valores.put(SQLiteHelper.COLUMN_PARTIDA_ID, partida.getGameId());
+        for(Partida partida : partidas) {
+            ContentValues valores = new ContentValues();
+            valores.put(SQLiteHelper.COLUMN_PARTIDA_CAMPEAO, partida.getChampion());
+            valores.put(SQLiteHelper.COLUMN_ROLE, partida.getRole());
+            valores.put(SQLiteHelper.COLUMN_LANE, partida.getLane());
+            valores.put(SQLiteHelper.COLUMN_REALLANE, partida.getRealLane());
+            valores.put(SQLiteHelper.COLUMN_GAME_DURATION, partida.getGameDuration());
+            valores.put(SQLiteHelper.COLUMN_PARTICIPANTES, partida.getParticipants().toString());
+            valores.put(SQLiteHelper.COLUMN_PARTIDA_ID, partida.getGameId());
 
-        mSqLiteDatabase = mHelper.getWritableDatabase();
-        mSqLiteDatabase.insert(SQLiteHelper.TABLE_NAME_PARTIDA, null, valores);
-        mSqLiteDatabase.close();
+            mSqLiteDatabase = mHelper.getWritableDatabase();
+            mSqLiteDatabase.insert(SQLiteHelper.TABLE_NAME_PARTIDA, null, valores);
+            mSqLiteDatabase.close();
+        }
     }
 
     public List<Partida> allByChamp(String id, String champ){

@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -29,12 +28,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int REQUEST_PERMISSION = 64;
 
 
-    private Retrofit mRetrofit;
 
     private CheckBox lembrar_checkbox;
     private EditText invocador_EditText;
@@ -43,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private PerfilDAO mPerfilDAO;
     private Perfil mPerfil;
     private Intent novoPerfil;
+    private Retrofit mRetrofit;
+
 
 
     @Override
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setElementos() {
         mPerfilDAO = new PerfilDAO(this);
+        novoPerfil = new Intent(this, Perfil_Activity.class);
     }
 
     private void setLayoutElementos() {
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mPerfil = mPerfilDAO.getPerfil(invocador_EditText.getText().toString());
                 novoPerfil = new Intent(this, Perfil_Activity.class);
                 if(mPerfil == null){
-                    buscaPerfil();
+                    buscaPerfil(invocador_EditText.getText().toString());
                 } else {
                     novoPerfil.putExtra(Constantes.KEY_PERFIL, invocador_EditText.getText().toString());
                     startActivity(novoPerfil);
@@ -120,46 +122,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void buscaPerfil() {
+    public void buscaPerfil(final String nome) {
         mRetrofit = new Retrofit.Builder()
                 .baseUrl(Constantes.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
-        String invocadorString = invocador_EditText.getText().toString();
-        if(invocadorString.isEmpty()){
-            Toast.makeText(this, getString(R.string.user_invalido), Toast.LENGTH_SHORT).show();
-        } else {
+        String invocadorString = nome;
 
-            RetrofitService mRetrofitService = mRetrofit.create(RetrofitService.class);
 
-            Call<Perfil> call = mRetrofitService.getPerfilDadosBasicos(invocadorString);
+        RetrofitService mRetrofitService = mRetrofit.create(RetrofitService.class);
+        Call<Perfil> call = mRetrofitService.getPerfilDadosBasicos(invocadorString);
 
-            call.enqueue(new Callback<Perfil>() {
-                @Override
-                public void onResponse(Call<Perfil> call, Response<Perfil> response) {
-                    if(response.isSuccessful()){
-                        mPerfil = response.body();
-                        mPerfilDAO.add(mPerfil);
-
-                        novoPerfil.putExtra(Constantes.KEY_PERFIL, invocador_EditText.getText().toString());
-                        startActivity(novoPerfil);
-
-                    } else {
-                        Toast.makeText(MainActivity.this, getString(R.string.erro_user), Toast.LENGTH_SHORT).show();
-                        mPerfil = null;
-                    }
+        call.enqueue(new Callback<Perfil>() {
+            @Override
+            public void onResponse(Call<Perfil> call, Response<Perfil> response) {
+                if (response.isSuccessful()) {
+                    mPerfil = response.body();
+                    mPerfilDAO.add(mPerfil);
+                    novoPerfil.putExtra(Constantes.KEY_PERFIL, invocador_EditText.getText().toString());
+                    startActivity(novoPerfil);
+                } else {
+                    mPerfil = null;
                 }
+            }
 
-                @Override
-                public void onFailure(Call<Perfil> call, Throwable t) {
+            @Override
+            public void onFailure(Call<Perfil> call, Throwable t) {
 
-                    Toast.makeText(MainActivity.this, getString(R.string.erro_api), Toast.LENGTH_SHORT).show();
-
-                }
-            });
-
-
-        }
+            }
+        });
     }
 
 }

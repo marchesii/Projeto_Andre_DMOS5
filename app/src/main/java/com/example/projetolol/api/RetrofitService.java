@@ -14,7 +14,7 @@ import retrofit2.http.Path;
 
 public interface RetrofitService {
     
-    String key = "api_key=RGAPI-a04939bf-df44-43e2-a363-8d8e7d1b0b30";
+    String key = "api_key=RGAPI-b7b27e5e-f2b0-408f-b62f-d3cac5068965";
 
     @GET("summoner/v4/summoners/by-name/{summonerName}?"+key)
     Call<Perfil> getPerfilDadosBasicos(@Path("summonerName") String summonerName);
@@ -38,7 +38,7 @@ public interface RetrofitService {
 
 
     @GET("lol/match/v4/matches/{matchId}?"+key)
-    Call<List<Liga>> getPartida(@Path("matchId") String summonerId);
+    Call<Partida> getPartida(@Path("matchId") String summonerId);
 
     //http://ddragon.leagueoflegends.com/cdn/10.21.1/img/profileicon/588.png
     @GET("http://ddragon.leagueoflegends.com/cdn/10.21.1/img/profileicon/{iconId}/.png")
