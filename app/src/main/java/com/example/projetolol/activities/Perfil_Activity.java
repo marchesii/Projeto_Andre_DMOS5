@@ -223,7 +223,7 @@ public class Perfil_Activity extends AppCompatActivity implements View.OnClickLi
                     novoHistorico.putExtra(Constantes.KEY_PERFIL, mPerfil.getAccountId());
                     startActivity(novoHistorico);
                 } else {
-                    mLigaList = null;
+                    mPartidaList = null;
                 }
             }
 
