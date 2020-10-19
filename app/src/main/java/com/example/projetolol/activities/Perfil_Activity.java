@@ -155,7 +155,6 @@ public class Perfil_Activity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         if(v == historico_button){
             novoHistorico =  new Intent(this, Historico_Activity.class);
-            novoHistorico.putExtra(Constantes.KEY_PERFIL, nick_textView.getText().toString());
             buscaHistorico(mPerfil.getAccountId());
         }
         if(v == pool_button){

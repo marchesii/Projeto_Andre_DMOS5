@@ -30,7 +30,6 @@
             android:layout_marginTop="120dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="Bronze III"
             android:textColor="@color/colorEloBronze"
             android:textSize="30sp" />
 
@@ -54,7 +53,6 @@
             app:layout_constraintTop_toBottomOf="@id/image_summoner_icon"
             app:layout_constraintLeft_toLeftOf="@id/image_summoner_icon"
             app:layout_constraintRight_toRightOf="@id/image_summoner_icon"
-            android:text="MrMigoasdasdasdasd"
             android:textSize="25sp"/>
 
         <Button
@@ -119,7 +117,6 @@
             android:id="@+id/textView_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="150"
             android:textSize="30sp"
             android:layout_toEndOf="@+id/textView_lvl"
             android:layout_marginLeft="20dp"
@@ -146,7 +143,6 @@
             android:id="@+id/textView_win_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100"
             android:textSize="30sp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/colorBlack"
@@ -171,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintRight_toRightOf="parent"
-                android:text="20"
+
                 android:textSize="30sp"
                 android:layout_marginLeft="30dp"
                 android:textColor="@color/colorBlack"

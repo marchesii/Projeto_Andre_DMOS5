@@ -26,7 +26,7 @@ public interface RetrofitService {
     Call<Servidor> getStatus(@Path("status") String status);
 
     @GET("match/v4/matchlists/by-account/{encryptedAccountId}?"+key)
-    Call<List<Partida>> getPartidaDados(@Path("encryptedAccountId") String summonerId);
+    Call<List<Partida>> getPartidaDados(@Path("encryptedAccountId") String accountId);
 
 
     @GET("match/v4/matchlists/by-account/{encryptedAccountId}?"+key + "/?beginIndex={beginIndex}")
