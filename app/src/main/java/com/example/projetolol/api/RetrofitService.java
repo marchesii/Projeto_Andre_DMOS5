@@ -14,7 +14,7 @@ import retrofit2.http.Path;
 
 public interface RetrofitService {
     
-    String key = "api_key=RGAPI-b7b27e5e-f2b0-408f-b62f-d3cac5068965";
+    String key = "api_key=";
 
     @GET("summoner/v4/summoners/by-name/{summonerName}?"+key)
     Call<Perfil> getPerfilDadosBasicos(@Path("summonerName") String summonerName);
